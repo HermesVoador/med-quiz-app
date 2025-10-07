@@ -13,3 +13,12 @@ orientation = portrait
 
 [buildozer]
 log_level = 2
+
+# Android specific
+android.api = 31
+android.minapi = 21
+android.ndk = 25b
+android.sdk = 28
+
+# Buildozer flags
+buildozer.init = 1
