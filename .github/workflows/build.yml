@@ -1,0 +1,17 @@
+name: Build Android APK
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build with Buildozer
+      uses: artem-solopov/buildozer-action@v2
+      with:
+        workdir: .
+        buildozer-version: stable
+    - uses: actions/upload-artifact@v2
+      with:
+        name: medquiz-apk
+        path: bin/*.apk
